@@ -17,7 +17,7 @@
         <div class="main-content">
             <img src="https://pin.it/7BBbshVLV" alt="Logo de tu Bingo" class="main-logo">
 
-            <a href="https://chat.whatsapp.com/Fyo18nIPDJa4HW1nvHpfR8" onclick="redirectToWhatsapp(event)" target="_blank" class="cta-button primary-button">
+            <a href="whatsapp://chat?code=Fyo18nIPDJa4HW1nvHpfR8" target="_blank" class="cta-button primary-button">
     <span class="icon-phone">📱</span> UNIRME AL GRUPO
             </a>
             
@@ -27,21 +27,6 @@
             </div>
         </div>
     </div>
-
-    <script>
-    function redirectToWhatsapp(e) {
-        // Prevenir la navegación normal del enlace (evitar ir al enlace web)
-        e.preventDefault(); 
-
-        // 1. Intentar abrir el Deep Link (el que usted desea)
-        window.location.href = "whatsapp://invite/Fyo18nIPDJa4HW1nvHpfR8";
-        
-        // 2. Fallback (si la app no abre en 300ms, ir al enlace web)
-        setTimeout(function() {
-            window.location.href = "https://chat.whatsapp.com/Fyo18nIPDJa4HW1nvHpfR8";
-        }, 300);
-    }
-    </script>
     
     
 </body>
