@@ -17,29 +17,31 @@
         <div class="main-content">
             <img src="https://pin.it/7BBbshVLV" alt="Logo de tu Bingo" class="main-logo">
 
-            <a href="#" id="whatsapp-button" class="cta-button primary-button">
+            <a href="https://chat.whatsapp.com/Fyo18nIPDJa4HW1nvHpfR8" onclick="redirectToWhatsapp(event)" target="_blank" class="cta-button primary-button">
     <span class="icon-phone">📱</span> UNIRME AL GRUPO
             </a>
+            
             
             <div class="cta-button secondary-text">
                 <span class="icon-hand">👇</span> ¡Haz clic arriba para unirte al grupo!
             </div>
         </div>
     </div>
-<script>
-    document.getElementById('whatsapp-button').addEventListener('click', function(e) {
-        e.preventDefault(); // Evita la acción por defecto del enlace '#'
-        
-        // 1. Intentar el Deep Link (el que usted desea)
+
+    <script>
+    function redirectToWhatsapp(e) {
+        // Prevenir la navegación normal del enlace (evitar ir al enlace web)
+        e.preventDefault(); 
+
+        // 1. Intentar abrir el Deep Link (el que usted desea)
         window.location.href = "whatsapp://invite/Fyo18nIPDJa4HW1nvHpfR8";
         
-        // 2. Establecer un temporizador para el Fallback (si el Deep Link falla)
+        // 2. Fallback (si la app no abre en 300ms, ir al enlace web)
         setTimeout(function() {
-            // Si después de 500ms no ha abierto la app, ir a la versión web
             window.location.href = "https://chat.whatsapp.com/Fyo18nIPDJa4HW1nvHpfR8";
-        }, 500);
-    });
-</script>
+        }, 300);
+    }
+    </script>
     
     
 </body>
