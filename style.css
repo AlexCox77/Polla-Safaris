@@ -1,0 +1,117 @@
+:root {
+    /* Define los colores principales */
+    --background-color-dark: #273b5e; /* Azul oscuro similar al fondo */
+    --button-color-pink: #e30a7d; /* Rosa/Magenta fuerte de los botones */
+    --button-shadow-color: #790641;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinea arriba para evitar que el logo se aplaste */
+    min-height: 100vh;
+    color: white;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/* Fondo de la Landing Page (Mesa de Póker) */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    position: fixed; /* Mantiene el fondo fijo */
+    top: 0;
+    left: 0;
+    
+    /* *** SUSTITUYE ESTA URL CON TU IMAGEN DE FONDO PÚBLICA *** */
+    background-image: url('URL_DE_LA_IMAGEN_DE_FONDO'); 
+    
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+/* Contenedor del contenido para que esté sobre el fondo */
+.main-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 400px; /* Tamaño típico de pantalla de celular */
+    margin: 0 auto;
+}
+
+/* Estilo del Logo Central */
+.main-logo {
+    width: 100%;
+    max-width: 300px; 
+    height: auto;
+    margin-bottom: 40px;
+}
+
+/* Estilos de los Botones (Genérico) */
+.cta-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 350px;
+    padding: 18px 20px;
+    margin-bottom: 15px;
+    border-radius: 50px; /* Borde de píldora */
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+}
+
+/* Botón UNIRME AL GRUPO (Principal) */
+.primary-button {
+    background-color: var(--button-color-pink);
+    border: 3px solid white; /* Borde blanco alrededor del botón */
+    transition: background-color 0.3s;
+}
+
+.primary-button:hover {
+    background-color: var(--button-shadow-color); /* Ligeramente más oscuro al pasar el ratón */
+}
+
+/* Texto de "¡Haz clic arriba..." (Secundario) */
+.secondary-text {
+    background-color: var(--button-color-pink);
+    border: none;
+    font-size: 1em;
+    padding: 14px 20px;
+    margin-top: 0; 
+}
+
+/* Estilos de Iconos */
+.icon-phone, .icon-hand {
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+.icon-hand {
+    /* Gira la mano para que apunte hacia arriba (al botón principal) */
+    transform: rotate(270deg); 
+    display: inline-block;
+    animation: bounce 1s infinite;
+}
+
+/* Animación sutil para el icono de la mano */
+@keyframes bounce {
+    0%, 100% {
+        transform: rotate(270deg) translateY(0);
+    }
+    50% {
+        transform: rotate(270deg) translateY(-5px);
+    }
+}
